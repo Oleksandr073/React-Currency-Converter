@@ -1,9 +1,7 @@
 import { NumericFormat } from 'react-number-format';
 import { InputStyled } from './NumericInput.styled';
 
-function NumericInput(props) {
-    const { name, value, handleChange, placeholderText } = props;
-
+function NumericInput({ name, value, handleChange, placeholderText }) {
     return <NumericFormat
         customInput={InputStyled}
         name={name}

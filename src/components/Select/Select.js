@@ -1,11 +1,8 @@
 import ReactSelect from 'react-select/creatable';
 import { customStyles } from './SelectStyles';
 
-function Select(props) {
-    const { name, value, handleChange, options } = props;
-    
+function Select({ name, value, handleChange, options }) {
     const defaultValue = options.find(option => option.value === value);
-
     return <ReactSelect
         name={name}
         options={options}

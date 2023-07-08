@@ -1,8 +1,6 @@
 import { ReactComponent as ErrorIcon } from '../../icons/sad-cloud.svg';
 
-function Error(props) {
-    const { size = 100, color = '#000000' } = props;
-
+function Error({ size = 100, color = '#000000' }) {
     return (
         <ErrorIcon
             width={size}

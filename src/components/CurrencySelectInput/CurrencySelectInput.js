@@ -2,9 +2,7 @@ import NumericInput from '../NumericInput/NumericInput';
 import Select from '../Select/Select';
 import { SelectInputWrapper } from './CurrencySelectInput.styled';
 
-function CurrencySelectInput(props) {
-    const { currency, value, optionValues, selectHandler, inputHandler } = props;
-
+function CurrencySelectInput({ currency, value, optionValues, selectHandler, inputHandler }) {
     const options = optionValues.map(value => ({ value, label: value, }));
 
     return (

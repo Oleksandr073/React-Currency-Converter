@@ -2,8 +2,7 @@ import CurrencySelectInput from '../CurrencySelectInput/CurrencySelectInput';
 import getFlagIconURL from '../../helpers/getFlagIconURL';
 import { CurrencyHeader, CurrencyText } from './ConversionForm.styled';
 
-function ConversionForm(props) {
-    const { countryCode, currencyText, currency, value, optionValues, selectHandler, inputHandler } = props;
+function ConversionForm({ countryCode, currencyText, currency, value, optionValues, selectHandler, inputHandler }) {
     return (
         <div>
             <CurrencyHeader>
