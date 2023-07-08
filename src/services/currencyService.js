@@ -10,6 +10,10 @@ export async function getCurrencies() {
 
     const data = await response.json();
     
+    return transformToCurrencies(data);
+}
+
+function transformToCurrencies(data) {
     data.unshift({
         txt: 'Українська гривня',
         rate: 1,
