@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { NumericFormat } from 'react-number-format';
 import { InputStyled } from './NumericInput.styled';
 
@@ -11,5 +12,12 @@ function NumericInput({ name, value, handleChange, placeholderText }) {
         placeholder={placeholderText || 'Enter a number'}
     />;
 }
+
+NumericInput.propTypes = {
+    name: PropTypes.string,
+    value: PropTypes.number,
+    handleChange: PropTypes.func,
+    placeholderText: PropTypes.string,
+};
 
 export default NumericInput;

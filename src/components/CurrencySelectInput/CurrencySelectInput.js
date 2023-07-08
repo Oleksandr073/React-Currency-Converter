@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useMemo } from 'react';
 import NumericInput from '../NumericInput/NumericInput';
 import Select from '../Select/Select';
@@ -16,5 +17,13 @@ function CurrencySelectInput({ currency, value, optionValues, selectHandler, inp
         </SelectInputWrapper>
     );
 }
+
+CurrencySelectInput.propTypes = {
+    currency: PropTypes.string.isRequired,
+    value: PropTypes.number.isRequired,
+    optionValues: PropTypes.arrayOf(PropTypes.string).isRequired,
+    selectHandler: PropTypes.func,
+    inputHandler: PropTypes.func,
+};
 
 export default CurrencySelectInput;

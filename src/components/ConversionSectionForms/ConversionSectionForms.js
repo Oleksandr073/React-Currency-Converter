@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useState, useMemo } from 'react';
 import ConversionForm from '../ConversionForm/ConversionForm';
 
@@ -57,5 +58,13 @@ function ConversionSectionForms({ currencies }) {
         </>
     );
 }
+
+ConversionSectionForms.propTypes = {
+    currencies: PropTypes.arrayOf(PropTypes.exact({
+        txt: PropTypes.string.isRequired,
+        rate: PropTypes.number.isRequired,
+        cc: PropTypes.string.isRequired,
+    })),
+};
 
 export default ConversionSectionForms;

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import CurrencySelectInput from '../CurrencySelectInput/CurrencySelectInput';
 import getFlagIconURL from '../../helpers/getFlagIconURL';
 import { CurrencyHeader, CurrencyText } from './ConversionForm.styled';
@@ -24,5 +25,15 @@ function ConversionForm({ countryCode, currencyText, currency, value, optionValu
         </div>
     );
 }
+
+ConversionForm.propTypes = {
+    countryCode: PropTypes.string.isRequired,
+    currencyText: PropTypes.string.isRequired,
+    currency: PropTypes.string.isRequired,
+    value: PropTypes.number.isRequired,
+    optionValues: PropTypes.arrayOf(PropTypes.string).isRequired,
+    selectHandler: PropTypes.func,
+    inputHandler: PropTypes.func,
+};
 
 export default ConversionForm;

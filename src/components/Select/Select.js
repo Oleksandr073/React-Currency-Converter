@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import ReactSelect from 'react-select/creatable';
 import { customStyles } from './SelectStyles';
 
@@ -12,5 +13,15 @@ function Select({ name, value, handleChange, options }) {
         isSearchable={false}
     />;
 }
+
+Select.propTypes = {
+    name: PropTypes.string,
+    value: PropTypes.string,
+    handleChange: PropTypes.func,
+    options: PropTypes.arrayOf(PropTypes.exact({
+        value: PropTypes.string,
+        label: PropTypes.string,
+    })).isRequired,
+};
 
 export default Select;

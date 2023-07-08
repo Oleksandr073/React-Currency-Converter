@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { styled } from "styled-components";
 
 const Loader = styled.div`
@@ -16,5 +17,12 @@ const Loader = styled.div`
         to { transform: rotate(360deg); } 
     }
 `;
+
+Loader.propTypes = {
+    size: PropTypes.number,
+    duration: PropTypes.number,
+    thickness: PropTypes.number,
+    color: PropTypes.string,
+};
 
 export default Loader;

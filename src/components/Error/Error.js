@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { ReactComponent as ErrorIcon } from '../../icons/sad-cloud.svg';
 
 function Error({ size = 100, color = '#000000' }) {
@@ -10,5 +11,10 @@ function Error({ size = 100, color = '#000000' }) {
         />
     );
 }
+
+Error.propTypes = {
+    size: PropTypes.number,
+    color: PropTypes.string,
+};
 
 export default Error;
