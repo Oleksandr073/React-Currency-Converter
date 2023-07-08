@@ -1,15 +1,13 @@
 import CurrencyPriceDisplay from '../CurrencyPriceDisplay/CurrencyPriceDisplay';
 import { useContext } from 'react';
-import { CurrenciesContext, IsLoadingContext, IsErrorContext } from '../../contexts/Contexts';
+import { CurrenciesContext } from '../../contexts/Contexts';
 import { List } from './HeaderInner.styled';
 import Loader from '../Loader/Loader';
 import Error from '../Error/Error';
 import NoCurrenciesMsg from '../NoCurrenciesMsg/NoCurrenciesMsg';
 
 function HeaderInner() {
-    const currencies = useContext(CurrenciesContext);
-    const isLoading = useContext(IsLoadingContext);
-    const isError = useContext(IsErrorContext);
+    const { currencies, isLoading, isError } = useContext(CurrenciesContext);
 
     if (isLoading) return <Loader color='#146C94' size={40} />;
     if (isError) return <Error color='#146C94' size={40} />;

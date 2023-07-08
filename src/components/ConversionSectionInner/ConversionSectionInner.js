@@ -1,14 +1,12 @@
 import { useState, useContext } from 'react';
-import { CurrenciesContext, IsLoadingContext, IsErrorContext } from '../../contexts/Contexts';
+import { CurrenciesContext } from '../../contexts/Contexts';
 import ConversionForm from '../ConversionForm/ConversionForm';
 import Loader from '../Loader/Loader';
 import Error from '../Error/Error';
 import NoCurrenciesMsg from '../NoCurrenciesMsg/NoCurrenciesMsg';
 
 function ConversionSectionInner() {
-    const currencies = useContext(CurrenciesContext);
-    const isLoading = useContext(IsLoadingContext);
-    const isError = useContext(IsErrorContext);
+    const { currencies, isLoading, isError } = useContext(CurrenciesContext);
 
     const [firstCurrency, setFirstCurrency] = useState('USD');
     const [secondCurrency, setSecondCurrency] = useState('UAH');

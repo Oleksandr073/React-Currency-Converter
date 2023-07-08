@@ -4,19 +4,19 @@ import MainLayout from './layout/MainLayout';
 import MainPage from './pages/MainPage';
 import NotFoundPage from './pages/NotFoundPage';
 import useFetch from './hooks/useFetch';
-import AppProviders from './providers/AppProviders';
+import { CurrenciesContext } from './contexts/Contexts';
 
 function App() {
     const { data: currencies, isLoading, isError } = useFetch(getCurrencies);
     return (
-        <AppProviders currencies={currencies} isLoading={isLoading} isError={isError} >
+        <CurrenciesContext.Provider value={{ currencies, isLoading, isError }} >
             <MainLayout>
                 <Routes>
                     <Route path='/' element={<MainPage />} />
                     <Route path='*' element={<NotFoundPage />} />
                 </Routes>
             </MainLayout>
-        </AppProviders>
+        </CurrenciesContext.Provider>
     );
 }
 
