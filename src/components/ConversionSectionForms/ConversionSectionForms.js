@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import ConversionForm from '../ConversionForm/ConversionForm';
 
-function ConversionSectionInner({ currencies }) {
+function ConversionSectionForms({ currencies }) {
     const [firstCurrency, setFirstCurrency] = useState('USD');
     const [secondCurrency, setSecondCurrency] = useState('UAH');
     const [value, setValue] = useState(1);
@@ -58,4 +58,4 @@ function ConversionSectionInner({ currencies }) {
     );
 }
 
-export default ConversionSectionInner;
+export default ConversionSectionForms;

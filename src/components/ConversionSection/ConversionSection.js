@@ -1,6 +1,6 @@
 import { CurrenciesContext } from '../../contexts/Contexts';
 import { useContext } from 'react';
-import ConversionSectionInner from '../ConversionSectionInner/ConversionSectionInner';
+import ConversionSectionForms from '../ConversionSectionForms/ConversionSectionForms';
 import { Wrapper, StyledContainer } from './ConversionSection.styled';
 import Loader from '../Loader/Loader';
 import Error from '../Error/Error';
@@ -23,7 +23,7 @@ function ConversionSectionContent() {
     if (isError) return <Error color='#19A7CE' size={200} />;
     if (!currencies?.length) return <NoCurrenciesMsg />;
 
-    return <ConversionSectionInner currencies={currencies} />
+    return <ConversionSectionForms currencies={currencies} />
 }
 
 export default ConversionSection;
