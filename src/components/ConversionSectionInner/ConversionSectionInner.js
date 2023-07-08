@@ -21,6 +21,9 @@ function ConversionSectionInner() {
 
     const optionValues = currencies.map(({ cc }) => cc);
 
+    const firstOptionValues = optionValues.filter(optionValue => optionValue !== secondCurrency);
+    const secondOptionValues = optionValues.filter(optionValue => optionValue !== firstCurrency);
+
     const firstCurrencyObj = currencies.find(({ cc }) => cc === firstCurrency);
     const secondCurrencyObj = currencies.find(({ cc }) => cc === secondCurrency);
 
@@ -37,7 +40,7 @@ function ConversionSectionInner() {
                 currencyText={firstText}
                 currency={firstCurrency}
                 value={firstValue}
-                optionValues={optionValues}
+                optionValues={firstOptionValues}
                 selectHandler={value => setFirstCurrency(value)}
                 inputHandler={value => { setValue(value); setIsCurrentFirstInput(true); }}
             />
@@ -46,7 +49,7 @@ function ConversionSectionInner() {
                 currencyText={secondText}
                 currency={secondCurrency}
                 value={secondValue}
-                optionValues={optionValues}
+                optionValues={secondOptionValues}
                 selectHandler={value => setSecondCurrency(value)}
                 inputHandler={value => { setValue(value); setIsCurrentFirstInput(false); }}
             />
