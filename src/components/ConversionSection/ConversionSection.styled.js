@@ -9,4 +9,9 @@ export const StyledContainer = styled(Container)`
     display: flex;
     justify-content: center;
     gap: 40px;
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+    }
 `;

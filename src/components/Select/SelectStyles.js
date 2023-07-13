@@ -33,7 +33,7 @@ export const customStyles = {
         ...defaultStyles,
         color: 'inherit',
     }),
-    dropdownIndicator: (defaultStyles) => ({
+    dropdownIndicator: (defaultStyles, { selectProps: { menuIsOpen } }) => ({
         ...defaultStyles,
         padding: '8px',
         color: 'inherit',
@@ -41,6 +41,7 @@ export const customStyles = {
         ':hover': {
             color: '#146C94',
         },
+        transform: menuIsOpen ? 'rotate(180deg)' : '',
     }),
     indicatorSeparator: () => ({
         display: 'none',
